@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sol-Trending</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" type="text/css">
+</head>
+
+<body>
+
+<div class="container">
+<!-- Header -->
+<header>
+   <div class="logo" >Soltrending</div>
+   <div class="header-right">
+     <div class="sol-balance" id="sol-balance">0 SOL</div>
+     <div id="wallet-ui">
+        <button id="connect-btn" class="connect-wallet">Connect Wallet</button>
+   </div>
+ </div>
+</header>
+  </header>
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-line"></div>
+    <div class="progress-fill" id="progress-fill"></div>
+    <div class="steps">
+      <div class="step active" data-step="1"><div class="circle">1</div><div class="step-label">Project<br>Details</div></div>
+      <div class="step" data-step="2"><div class="circle">2</div><div class="step-label">Package<br>Selection</div></div>
+      <div class="step" data-step="3"><div class="circle">3</div><div class="step-label">Payment</div></div>
+      <div class="step" data-step="4"><div class="circle">4</div><div class="step-label">Confirmation</div></div>
+    </div>
+  </div>
+
+  <!-- Step 1 -->
+  <div id="step-1" class="step-content active">
+    <h1>Project Information</h1>
+    <p class="description">Provide details about your project for the trending campaign</p>
+    <form id="project-form">
+      <div class="field"><label>Project Name <span>*</span></label><input type="text" required placeholder="Enter your project name"></div>
+      <div class="field"><label>Contract Address <span>*</span></label><input type="text" required placeholder="Solana contract address"></div>
+      <div class="field"><label>Project Logo</label>
+        <div class="file-input"><div class="choose-file">Choose File</div><div class="file-name">no file selected</div>
+          <input type="file" style="opacity:0;position:absolute;width:100%;height:100%;cursor:pointer;">
+        </div>
+      </div>
+      <div class="field"><label>Telegram</label><input type="text" placeholder="@username"></div>
+      <div class="field"><label>Twitter/X</label><input type="text" placeholder="@username"></div>
+      <div class="field"><label>Website</label><input type="text" placeholder="https://example.com"></div>
+      <div class="field"><label>Project Description</label><textarea placeholder="Briefly describe your project..."></textarea></div>
+      <button type="submit" class="btn btn-primary">Continue to Packages</button>
+    </form>
+  </div>
+
+  <!-- Step 2 -->
+  <div id="step-2" class="step-content">
+    <h1>Trending Packages</h1>
+    <p class="description">Choose your visibility tier and duration</p>
+
+    <div class="tier-card" id="standard-card">
+      <h3>Standard Trending</h3>
+      <p>Top 15 visibility with solid exposure</p>
+    </div>
+
+    <div class="tier-card recommended" id="premium-card">
+      <div class="recommended-badge">Recommended</div>
+      <h3>Premium Trending</h3>
+      <p>Top 7 visibility for maximum impact</p>
+    </div>
+
+    <div id="duration-options">
+      <h3 id="options-title">Select Duration</h3>
+      <div class="duration-list" id="duration-list"></div>
+      <div class="total-price">Total: <span id="total-price">0</span> SOL</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Back</button>
+      <button type="button" class="btn btn-primary" id="continue-btn" onclick="goToStep(3)" disabled>Continue to Payment</button>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div id="step-3" class="step-content">
+    <h1>Payment Details</h1>
+    <p class="description">Complete your payment to start trending</p>
+
+    <div class="wallet-address">
+      <button class="copy-btn" onclick="copyWallet()">Copy</button>
+     5iuDQTtC4L9pSEkecxPjpF2usXwv7dNmtGRZv6oWPLVz
+    </div>
+
+    <div class="instructions">
+      <h3 style="margin-bottom: 16px; color: white;">Payment Instructions</h3>
+      <div class="instruction"><div class="instruction-number">1</div><div>Copy the wallet address above</div></div>
+      <div class="instruction"><div class="instruction-number">2</div><div>Send <strong id="pay-amount">5.2</strong> SOL exactly</div></div>
+      <div class="instruction"><div class="instruction-number">3</div><div>Wait 1-2 minutes for confirmation</div></div>
+      <div class="instruction"><div class="instruction-number">4</div><div>Click "Verify Payment" below</div></div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Back</button>
+      <button type="button" class="btn btn-primary" onclick="goToStep(4)">Verify Payment</button>
+    </div>
+  </div>
+
+  <!-- Step 4 -->
+  <div id="step-4" class="step-content">
+    <h1>Payment Verification</h1>
+    <p class="description">Confirming your transaction on the blockchain</p>
+    <div style="text-align:center; padding:40px 0;">
+      <div class="loading-spinner"></div>
+      <div style="font-size:18px; margin-top:20px;">Verifying payment on Solana blockchain...</div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
