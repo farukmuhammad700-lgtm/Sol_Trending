@@ -98,7 +98,7 @@
     });
 
     if (n === 3) document.getElementById('pay-amount').textContent = selectedPrice.toFixed(2);
-    if (n === 4) setTimeout(() => alert("Payment Verified! Your token is now trending!"), 3000);
+    if (n === 4) setTimeout(() => alert("Processing........!"), 3000);
   }
 
   // Tier selection
