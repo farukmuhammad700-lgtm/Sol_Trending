@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sol-Trending</title>
+  <title>Sol_Trending</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css" type="text/css">
 </head>
@@ -39,21 +39,18 @@
     <h1>Project Information</h1>
     <p class="description">Provide details about your project for the trending campaign</p>
     <form id="project-form">
-      <div class="field"><label>Project Name <span>*</span></label><input type="text" id="project name" placehoder="Enter your project name"></div>
-      <div class="field"><label>Contract Address <span>*</span></label><input type="text" id="contract address" placeholder="solana contrast address"></div>
+      <div class="field"><label>Project Name <span>*</span></label><input type="text" required placeholder="Enter your project name"></div>
+      <div class="field"><label>Contract Address <span>*</span></label><input type="text" required placeholder="Solana contract address"></div>
       <div class="field"><label>Project Logo</label>
-        <div class="file-upload-wrapper"><input type="file" id="logo-upload" accept="image/*" style="display: none;" />
-          <button type="button" id="choose-file-btn" class="choose-file">Choose File</button>
-        <span id="file-name">No file selected</span>
+        <div class="file-input"><div class="choose-file">Choose File</div><div class="file-name">no file selected</div>
+          <input type="file" style="opacity:0;position:absolute;width:100%;height:100%;cursor:pointer;">
         </div>
       </div>
       <div class="field"><label>Telegram</label><input type="text" placeholder="@username"></div>
       <div class="field"><label>Twitter/X</label><input type="text" placeholder="@username"></div>
       <div class="field"><label>Website</label><input type="text" placeholder="https://example.com"></div>
       <div class="field"><label>Project Description</label><textarea placeholder="Briefly describe your project..."></textarea></div>
-      <button type="button" id="Proceed-to-Packages" class="btn btn-primary">
-        proceed to packages
-        </button>
+      <button type="submit" class="btn btn-primary">proceed to Packages</button>
     </form>
   </div>
 
@@ -124,7 +121,4 @@
 <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
 <script src="script.js"></script>
 </body>
-
 </html>
-
-
