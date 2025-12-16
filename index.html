@@ -39,11 +39,11 @@
     <h1>Project Information</h1>
     <p class="description">Provide details about your project for the trending campaign</p>
     <form id="project-form">
-      <div class="field"><label>Project Name <span>*</span></label><input type="text" required placeholder="Enter your project name"></div>
-      <div class="field"><label>Contract Address <span>*</span></label><input type="text" required placeholder="Solana contract address"></div>
+      <div class="field"><label>Project Name <span>*</span></label><input type="text" id="project-name" required placeholder="Enter your project name"></div>
+      <div class="field"><label>Contract Address <span>*</span></label><input type="text" id="contract-address" required placeholder="Solana contract address"></div>
       <div class="field"><label>Project Logo</label>
         <div class="file-input"><div class="choose-file">Choose File</div><div class="file-name">no file selected</div>
-          <input type="file" style="opacity:0;position:absolute;width:100%;height:100%;cursor:pointer;">
+          <input type="file"id="logo-upload" style="opacity:0;position:absolute;width:100%;height:100%;cursor:pointer;">
         </div>
       </div>
       <div class="field"><label>Telegram</label><input type="text" placeholder="@username"></div>
@@ -122,3 +122,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
