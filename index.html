@@ -42,15 +42,18 @@
       <div class="field"><label>Project Name <span>*</span></label><input type="text" id="project name" placehoder="Enter your project name"></div>
       <div class="field"><label>Contract Address <span>*</span></label><input type="text" id="contract address" placeholder="solana contrast address"></div>
       <div class="field"><label>Project Logo</label>
-        <div class="file-input"><div class="choose-file">Choose File</div><div class="file-name">select file</div>
-          <input type="file" style="display: none;"/>
+        <div class="file-upload-wrapper"><input type="file" id="logo-upload" accept="image/*" style="display: none;" />
+          <button type="button" id="choose-file-btn" class="choose-file">Choose File</button>
+        <span id="file-name">No file selected</span>
         </div>
       </div>
       <div class="field"><label>Telegram</label><input type="text" placeholder="@username"></div>
       <div class="field"><label>Twitter/X</label><input type="text" placeholder="@username"></div>
       <div class="field"><label>Website</label><input type="text" placeholder="https://example.com"></div>
       <div class="field"><label>Project Description</label><textarea placeholder="Briefly describe your project..."></textarea></div>
-      <button type="submit" class="btn btn-primary">Proceed to Packages</button>
+      <button type="button" id="Proceed-to-Packages" class="btn btn-primary">
+        proceed to packages
+        </button>
     </form>
   </div>
 
@@ -123,4 +126,5 @@
 </body>
 
 </html>
+
 
